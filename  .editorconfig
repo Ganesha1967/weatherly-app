@@ -1,0 +1,23 @@
+# When authoring changes in .editorconfig, run ./gradlew spotlessApply --no-daemon
+# Reference: https://github.com/diffplug/spotless/issues/1924
+[*.{kt,kts}]
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+trim_trailing_whitespace = true
+
+[*.{kt,kts}]
+indent_size = 4
+max_line_length = 140
+ktlint_standard = enabled
+ktlint_experimental = enabled
+ktlint_code_style = ktlint_official
+ktlint_standard_comment-spacing = disabled
+ktlint_standard_package-name = disabled
+ij_kotlin_allow_trailing_comma = true
+ij_kotlin_allow_trailing_comma_on_call_site = true
+ktlint_standard_function-naming = disabled
+ktlint_standard_no-wildcard-imports = disabled
+ktlint_function_naming_ignore_when_annotated_with=Composable
