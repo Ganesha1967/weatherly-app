@@ -1,0 +1,24 @@
+#!/bin/bash
+
+echo "Start git pre-commit hook. Running Spotless Apply..."
+
+OUTPUT="/tmp/spotless-$(date +%s)"
+
+./gradlew spotlessApply > "$OUTPUT" 2>&1
+EXIT_CODE=$?
+
+if [[ $EXIT_CODE -ne 0 ]]; then
+    cat "$OUTPUT"
+    rm "$OUTPUT"
+
+    echo "*****************************************************"
+    echo "               Spotless Apply FAILED                 "
+    echo "  Please fix the formatting issues before committing "
+    echo "*****************************************************"
+
+    exit $EXIT_CODE
+fi
+
+rm "$OUTPUT"
+echo "Spotless finished. Code is clean"
+exit 0

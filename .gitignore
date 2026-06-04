@@ -1,0 +1,45 @@
+# IntelliJ IDEA / Android Studio
+.idea/
+*.iml
+
+# Local configuration
+local.properties
+
+# Gradle
+.gradle/
+.kotlin/
+.gradletasknamecache
+gradle/gradle-daemon-jvm.properties
+!gradle-wrapper.jar
+
+# Build directories
+build/
+buildSrc/build/
+composeApp/build/
+shared/build/
+androidApp/build/
+out/
+bin/
+gen/
+generated/
+
+# Android
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Generated application files
+*.apk
+*.ap_
+*.dex
+*.class
+
+# OS files
+.DS_Store
+
+# Eclipse
+.classpath
+.project
+
+# Sandbox
+_sandbox
