@@ -1,78 +1,109 @@
 # Weatherly 🌤️
 
-Умное погодное приложение для Android с персонализированными рекомендациями, детальной аналитикой и прогнозом погоды в реальном времени
+A smart Android weather application featuring personalized recommendations, detailed analytics and real-time weather forecasts
 
 ---
 
-## Интерфейс приложения
-<img src="screenshots/01_main.jpg" width="180"/> <img src="screenshots/02_search.jpg" width="180" /> <img src="screenshots/03_analytics.jpg" width="180"/> <img src="screenshots/04_settings.jpg" width="180"/>
+## Application Screenshots
+
+<img src="screenshots/01_main.jpg" width="180"/> <img src="screenshots/02_search.jpg" width="180"/> <img src="screenshots/03_analytics.jpg" width="180"/> <img src="screenshots/04_settings.jpg" width="180"/>
 
 ---
 
-## Возможности
+## Features
 
-* **Точный прогноз погоды** - актуальные погодные данные для любого города
-* **Персонализированные рекомендации** - советы по одежде и планированию дня
-* **Погодная аналитика** - подробный разбор погодных условий и показателей
-* **Поиск городов** - быстрый поиск и сохранение локаций в избранное
-* **Несколько тем оформления** - настройте внешний вид приложения под себя
-* **Гибкие настройки единиц измерения**:
+* **Accurate Weather Forecasts** - up-to-date weather information for any city
+* **Personalized Recommendations** - clothing suggestions and daily planning tips based on current weather conditions
+* **Weather Analytics** - detailed insights into weather metrics and atmospheric conditions
+* **City Search** - quickly search for locations and save them to favorites
+* **Multiple Themes** - customize the app's appearance to match your preferences
+* **Flexible Unit Settings**:
 
-    * Температура: °C / °F
-    * Давление: гПа / мм рт. ст.
-    * Скорость ветра: м/с / км/ч
-
----
-## 🛠️ Стек технологий
-
-* **Kotlin** - основной язык разработки
-* **Jetpack Compose** - современный декларативный UI-фреймворк
-* **Material Design 3** - актуальная дизайн-система Android
-* **Hilt** - внедрение зависимостей (Dependency Injection)
-* **Room** - локальное хранение данных и кэширование
-* **Ktor** - работа с сетевыми запросами и API
-* **Kotlin Coroutines & Flow** - асинхронность и реактивное программирование
-* **Spotless** - автоматическое форматирование исходного кода
-* **Detekt** - статический анализатор кода для Kotlin
-* **Ktlint Gradle** - проверка и форматирование Kotlin-кода в процессе сборки
+    * Temperature: °C / °F
+    * Pressure: hPa / mmHg
+    * Wind Speed: m/s / km/h
 
 ---
 
-## 📥 Установка и запуск
+## 🛠️ Tech Stack
 
-### Клонирование репозитория
+* **Kotlin** - primary programming language
+* **Jetpack Compose** - modern declarative UI toolkit
+* **Material Design 3** - latest Android design system
+* **Hilt** - dependency injection
+* **Room** - local data storage and caching
+* **Ktor** - networking and API communication
+* **Kotlin Coroutines & Flow** - asynchronous and reactive programming
+* **Spotless** - automated source code formatting
+* **Detekt** - static code analysis for Kotlin
+* **Ktlint Gradle** - Kotlin code formatting and linting during builds
+
+---
+
+## 📥 Installation & Setup
+
+### Clone the Repository
 
 ```bash
 git clone https://github.com/Ganesha1967/weatherly-app.git
 ```
 
-### Запуск проекта
+### Run the Project
 
-1. Откройте проект в **Android Studio**
-2. Дождитесь завершения синхронизации Gradle
-3. Соберите проект
-4. Запустите приложение на эмуляторе или физическом Android-устройстве
+1. Open the project in **Android Studio**
+2. Wait for Gradle synchronization to complete
+3. Build the project
+4. Run the application on an emulator or a physical Android device
 
-### Сборка
+### Build APK
 
 ```bash
-./gradlew assembleDebug         # Сборка debug APK
+./gradlew assembleDebug
 ```
 
 ---
 
-## Системные требования
+## System Requirements
 
-| Параметр                     | Значение             |
-| ---------------------------- |----------------------|
-| Минимальная версия Android   | Android 10 (API 29)  |
-| Рекомендуемая версия Android | Android 14+ (API 34) |
-| Свободное место              | ~40 MB               |
+| Parameter                   | Value                |
+| --------------------------- | -------------------- |
+| Minimum Android Version     | Android 10 (API 29)  |
+| Recommended Android Version | Android 14+ (API 34) |
+| Free Storage Space          | ~40 MB               |
+
+---
+
+## Download
+
+[Download latest APK](https://github.com/Ganesha1967/weatherly-app/releases/weatherly-debug.apk)
+
+---
+
+## Contributing
+
+Contributions are welcome and appreciated!
+
+If you'd like to contribute:
+
+1. Fork the repository
+2. Create a feature branch:
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Make your changes and ensure the project builds successfully
+4. Run code quality checks and formatting tools
+5. Commit your changes with a clear commit message
+6. Push your branch and open a Pull Request
+
+Please follow the project's coding conventions and keep pull requests focused on a single improvement or feature whenever possible
+
+Bug reports, feature requests and suggestions are also welcome through GitHub Issues
 
 
 ---
 
-## 📄 Лицензия
+## 📄 License
 
-Проект распространяется под лицензией **MIT**. Подробности доступны в файле `LICENSE`
+This project is licensed under the **MIT License**. See the `LICENSE` file for more details
 
