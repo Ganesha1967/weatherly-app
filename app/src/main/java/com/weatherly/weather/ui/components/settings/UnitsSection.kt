@@ -44,7 +44,7 @@ fun UnitsSection(
             title = "Температура",
             options = listOf("°C", "°F"),
             selected = if (prefs.useFahrenheit) 1 else 0,
-            onOptionSelected = {
+            onSelectOption = {
                 scope.launch {
                     appState.update {
                         copy(useFahrenheit = !useFahrenheit)
@@ -57,7 +57,7 @@ fun UnitsSection(
             title = "Давление",
             options = listOf("гПа", "мм рт. ст."),
             selected = if (prefs.useHpa) 0 else 1,
-            onOptionSelected = {
+            onSelectOption = {
                 scope.launch {
                     appState.update {
                         copy(useHpa = !useHpa)
@@ -70,7 +70,7 @@ fun UnitsSection(
             title = "Скорость ветра",
             options = listOf("км/ч", "м/с"),
             selected = if (prefs.useKmh) 0 else 1,
-            onOptionSelected = {
+            onSelectOption = {
                 scope.launch {
                     appState.update {
                         copy(useKmh = !useKmh)
