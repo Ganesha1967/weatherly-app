@@ -41,6 +41,10 @@ fun SearchScreen(
         }
     }
 
+    val onQueryChange = { text: String ->
+        viewModel.updateQuery(text)
+    }
+
     val onCitySelect = { name: String ->
         viewModel.selectCityByName(name)
     }
@@ -73,7 +77,7 @@ fun SearchScreen(
 
             SearchInputField(
                 query = uiState.query,
-                onQueryChange = onCitySelect,
+                onQueryChange = onQueryChange,
             )
 
             SearchContentStatus(
