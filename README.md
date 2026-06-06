@@ -73,6 +73,12 @@ git clone https://github.com/Ganesha1967/weatherly-app.git
 
 ---
 
+## Download
+
+[Download latest APK](https://github.com/Ganesha1967/weatherly-app/releases/weatherly-debug.apk)
+
+---
+
 ## Contributing
 
 Contributions are welcome and appreciated!
