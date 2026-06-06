@@ -40,6 +40,7 @@ fun AppNavigation(
     }
 
     Scaffold(
+        modifier = modifier,
         containerColor = Color.Transparent,
         bottomBar = {
             BottomNavigationBar(navController = navController)
@@ -47,7 +48,7 @@ fun AppNavigation(
     ) { paddingValues ->
         Box(
             modifier =
-                modifier
+                Modifier
                     .fillMaxSize()
                     .background(
                         Brush.verticalGradient(

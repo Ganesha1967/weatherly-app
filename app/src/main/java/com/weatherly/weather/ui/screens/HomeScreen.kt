@@ -55,7 +55,7 @@ fun HomeScreen(
                 pullToRefreshState = pullToRefreshState,
                 isRefreshing = isRefreshing,
                 onRefresh = { viewModel.refreshWeather() },
-                modifier = modifier,
+                modifier = Modifier,
             )
         }
     }

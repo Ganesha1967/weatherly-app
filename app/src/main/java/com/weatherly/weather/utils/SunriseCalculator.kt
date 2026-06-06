@@ -25,21 +25,12 @@ object SunriseCalculator {
         val now = Clock.System.now().toLocalDateTime(zone)
         val currentMinutes = now.hour * 60 + now.minute
 
-        return when {
-            currentMinutes <= riseMinutes -> {
-                0f
-            }
-
-            currentMinutes >= setMinutes -> {
-                1f
-            }
-
-            else -> {
-                (
-                    (currentMinutes - riseMinutes).toFloat() /
-                        (setMinutes - riseMinutes)
-                ).coerceIn(0f, 1f)
-            }
+        return if (currentMinutes <= riseMinutes) {
+            0f
+        } else if (currentMinutes >= setMinutes) {
+            1f
+        } else {
+            ((currentMinutes - riseMinutes).toFloat() / (setMinutes - riseMinutes)).coerceIn(0f, 1f)
         }
     }
 

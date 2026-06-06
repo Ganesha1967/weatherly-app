@@ -33,6 +33,7 @@ fun SearchResultCard(
     isFavorite: Boolean,
     onClick: () -> Unit,
     onFavoriteToggle: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     val iconResId =
         if (isFavorite) {
@@ -59,7 +60,7 @@ fun SearchResultCard(
 
     Row(
         modifier =
-            Modifier
+            modifier
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(12.dp))
                 .background(Weatherly.colors.glassSurface)

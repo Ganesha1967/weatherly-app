@@ -15,6 +15,9 @@ subprojects {
                 target("**/*.kt")
                 targetExclude("**/build/**/*.kt")
                 ktlint("1.8.0")
+                    .customRuleSets(
+                        listOf("io.nlopez.compose.rules:ktlint:0.4.22")
+                    )
                 trimTrailingWhitespace()
                 endWithNewline()
             }

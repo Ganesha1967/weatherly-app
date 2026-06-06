@@ -18,6 +18,7 @@ fun ThemeCircle(
     color: Color,
     isActive: Boolean,
     onClick: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     val borderWidth =
         if (isActive) {
@@ -35,7 +36,7 @@ fun ThemeCircle(
 
     Box(
         modifier =
-            Modifier
+            modifier
                 .size(36.dp)
                 .background(color, CircleShape)
                 .border(

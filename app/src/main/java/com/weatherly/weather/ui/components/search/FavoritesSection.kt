@@ -14,10 +14,13 @@ import com.weatherly.weather.ui.theme.Weatherly
 @Composable
 fun FavoritesSection(
     favorites: List<CitySearchResult>,
-    onCitySelected: (CitySearchResult) -> Unit,
-    onFavoriteToggle: (CitySearchResult) -> Unit,
+    onSelectCity: (CitySearchResult) -> Unit,
+    onToggleFavorite: (CitySearchResult) -> Unit,
+    modifier: Modifier = Modifier,
 ) {
-    Column {
+    Column(
+        modifier = modifier,
+    ) {
         Text(
             text = "ИЗБРАННЫЕ ГОРОДА",
             style = LabelSmallStyle,
@@ -28,8 +31,8 @@ fun FavoritesSection(
         favorites.forEachIndexed { index, city ->
             FavoriteItem(
                 city = city,
-                onClick = { onCitySelected(city) },
-                onFavoriteToggle = { onFavoriteToggle(city) },
+                onClick = { onSelectCity(city) },
+                onFavoriteToggle = { onToggleFavorite(city) },
             )
 
             if (index < favorites.lastIndex) {

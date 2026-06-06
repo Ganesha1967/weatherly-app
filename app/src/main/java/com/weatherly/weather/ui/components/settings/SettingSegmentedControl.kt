@@ -27,9 +27,10 @@ fun SettingSegmentedControl(
     title: String,
     options: List<String>,
     selected: Int,
-    onOptionSelected: (Int) -> Unit,
+    onSelectOption: (Int) -> Unit,
+    modifier: Modifier = Modifier,
 ) {
-    Column(modifier = Modifier.fillMaxWidth()) {
+    Column(modifier = modifier.fillMaxWidth()) {
         Text(
             text = title.uppercase(),
             style = LabelSmallStyle.copy(color = Color.White),
@@ -53,7 +54,7 @@ fun SettingSegmentedControl(
                 SegmentButton(
                     option = option,
                     isSelected = index == selected,
-                    onClick = { onOptionSelected(index) },
+                    onClick = { onSelectOption(index) },
                     modifier = Modifier.weight(1f),
                 )
             }

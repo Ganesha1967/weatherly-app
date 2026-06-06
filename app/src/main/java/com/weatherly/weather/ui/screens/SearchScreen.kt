@@ -11,10 +11,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import com.weatherly.weather.domain.model.CitySearchResult
 import com.weatherly.weather.ui.components.search.FavoritesSection
 import com.weatherly.weather.ui.components.search.SearchContentStatus
 import com.weatherly.weather.ui.components.search.SearchInputField
@@ -24,22 +26,36 @@ import com.weatherly.weather.viewmodel.search.SearchViewModel
 
 @Composable
 fun SearchScreen(
-    viewModel: SearchViewModel = hiltViewModel(),
     onNavigateBack: () -> Unit,
+    modifier: Modifier = Modifier,
+    viewModel: SearchViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val favorites by viewModel.favoritesFlow.collectAsState(initial = emptyList())
+    val currentOnNavigateBack = rememberUpdatedState(onNavigateBack)
 
     LaunchedEffect(uiState.selectedCityId) {
         if (uiState.selectedCityId != null) {
-            onNavigateBack()
+            currentOnNavigateBack.value()
             viewModel.clearSearch()
         }
     }
 
+    val onCitySelect = { name: String ->
+        viewModel.selectCityByName(name)
+    }
+
+    val onFavoriteToggle = { city: CitySearchResult ->
+        viewModel.toggleFavorite(city)
+    }
+
+    val onSelectFavoriteCity = { city: CitySearchResult ->
+        viewModel.selectFavoriteCity(city)
+    }
+
     Box(
         modifier =
-            Modifier
+            modifier
                 .fillMaxSize()
                 .background(Weatherly.colors.backgroundDeepest.copy(alpha = 0.85f)),
     ) {
@@ -57,21 +73,21 @@ fun SearchScreen(
 
             SearchInputField(
                 query = uiState.query,
-                onQueryChange = { viewModel.updateQuery(it) },
+                onQueryChange = onCitySelect,
             )
 
             SearchContentStatus(
                 uiState = uiState,
                 favorites = favorites,
-                onCitySelect = { name -> viewModel.selectCityByName(name) },
-                onFavoriteToggle = { city -> viewModel.toggleFavorite(city) },
+                onCitySelect = onCitySelect,
+                onFavoriteToggle = onFavoriteToggle,
             )
 
             if (favorites.isNotEmpty()) {
                 FavoritesSection(
                     favorites = favorites,
-                    onCitySelected = { city -> viewModel.selectFavoriteCity(city) },
-                    onFavoriteToggle = { city -> viewModel.toggleFavorite(city) },
+                    onSelectCity = onSelectFavoriteCity,
+                    onToggleFavorite = onFavoriteToggle,
                 )
             }
         }

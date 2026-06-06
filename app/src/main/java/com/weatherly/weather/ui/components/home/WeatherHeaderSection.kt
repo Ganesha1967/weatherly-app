@@ -157,34 +157,40 @@ private fun WeatherDescription(
     description: String,
     tempRange: String,
     precipitation: Int,
+    modifier: Modifier = Modifier,
 ) {
-    Text(
-        text = description.uppercase(),
-        fontSize = 12.sp,
-        fontWeight = FontWeight.Medium,
-        color = Color.White,
-        letterSpacing = 1.sp,
-    )
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text(
+            text = description.uppercase(),
+            fontSize = 12.sp,
+            fontWeight = FontWeight.Medium,
+            color = Color.White,
+            letterSpacing = 1.sp,
+        )
 
-    Spacer(modifier = Modifier.height(4.dp))
+        Spacer(modifier = Modifier.height(4.dp))
 
-    Text(
-        text = "$tempRange  •  💧 $precipitation%",
-        style =
-            BodySmallStyle.copy(
-                color = Weatherly.colors.textMuted,
-                fontSize = 12.sp,
-            ),
-    )
+        Text(
+            text = "$tempRange  •  💧 $precipitation%",
+            style =
+                BodySmallStyle.copy(
+                    color = Weatherly.colors.textMuted,
+                    fontSize = 12.sp,
+                ),
+        )
+    }
 }
 
 @Composable
 private fun WeatherIconWithGlow(
     weatherType: String,
     glowColor: Color,
+    modifier: Modifier = Modifier,
     iconSize: TextUnit = 80.sp,
     containerSize: Dp = 100.dp,
-    modifier: Modifier = Modifier,
 ) {
     Text(
         text = getWeatherIcon(weatherType),
@@ -202,7 +208,6 @@ private fun WeatherIconWithGlow(
     )
 }
 
-@Composable
 private fun getWeatherIcon(type: String): String =
     when (type.trim()) {
         "sun" -> "☀️"

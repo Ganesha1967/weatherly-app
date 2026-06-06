@@ -31,10 +31,11 @@ fun FavoriteItem(
     city: CitySearchResult,
     onClick: () -> Unit,
     onFavoriteToggle: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     Row(
         modifier =
-            Modifier
+            modifier
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(12.dp))
                 .background(Weatherly.colors.glassSurface)

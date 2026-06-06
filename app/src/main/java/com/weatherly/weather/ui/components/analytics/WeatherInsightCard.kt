@@ -24,10 +24,11 @@ fun WeatherInsightCard(
     title: String,
     description: String,
     icon: @Composable () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     Box(
         modifier =
-            Modifier
+            modifier
                 .fillMaxWidth()
                 .glassCard(20)
                 .border(
