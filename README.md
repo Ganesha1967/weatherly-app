@@ -1,3 +1,5 @@
+[![Artifact Build](https://img.shields.io/badge/Download-Android%20APK-green?logo=android&logoColor=white)](https://github.com/Ganesha1967/weatherly-app/releases/download/debug-latest/weatherly-debug.apk)
+
 # Weatherly 🌤️
 
 A smart Android weather application featuring personalized recommendations, detailed analytics and real-time weather forecasts
@@ -75,7 +77,7 @@ git clone https://github.com/Ganesha1967/weatherly-app.git
 
 ## Download
 
-[Download latest APK](https://github.com/Ganesha1967/weatherly-app/releases/weatherly-debug.apk)
+[Download latest APK](https://github.com/Ganesha1967/weatherly-app/releases/download/debug-latest/weatherly-debug.apk)
 
 ---
 
